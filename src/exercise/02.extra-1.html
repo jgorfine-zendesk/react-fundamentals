@@ -1,0 +1,27 @@
+<!-- Intro to raw React APIs -->
+<!-- http://localhost:3000/isolated/exercise/02.extra-1.html -->
+
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+  <script type="module">
+    const rootElement = document.getElementById('root')
+    // 👩🏻‍🦱 Declare that both children will be <span> HTML elements
+    const childElementType = 'span'
+    // 👩🏻‍🦱 Create the first <span>
+    const element1Props = {children: 'Hello'}
+    const reactElement1 = React.createElement(childElementType, element1Props)
+    // 👩🏻‍🦱 Create the second <span>
+    const element2Props = {children: 'World'}
+    const reactElement2 = React.createElement(childElementType, element2Props)
+    // 👩🏻‍🦱 Create the container & declare <span> React elements as children
+    const elementProps = {
+      class: 'container',
+      children: [reactElement1, reactElement2],
+    }
+    const reactElement = React.createElement('div', elementProps)
+    const root = ReactDOM.createRoot(rootElement)
+    root.render(reactElement)
+  </script>
+</body>
