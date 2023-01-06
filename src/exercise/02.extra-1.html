@@ -10,17 +10,16 @@
     // 👩🏻‍🦱 Declare that both children will be <span> HTML elements
     const childElementType = 'span'
     // 👩🏻‍🦱 Create the first <span>
-    const element1Props = {children: 'Hello'}
-    const reactElement1 = React.createElement(childElementType, element1Props)
+    const reactElement1 = React.createElement(childElementType, null, 'Hello')
     // 👩🏻‍🦱 Create the second <span>
-    const element2Props = {children: 'World'}
-    const reactElement2 = React.createElement(childElementType, element2Props)
+    const reactElement2 = React.createElement(childElementType, null, 'World')
     // 👩🏻‍🦱 Create the container & declare <span> React elements as children
-    const elementProps = {
-      class: 'container',
+    const containerElementProps = {
+      className: 'container',
       children: [reactElement1, reactElement2],
     }
-    const reactElement = React.createElement('div', elementProps)
+    // 👩🏻‍🦱 Now put it all together
+    const reactElement = React.createElement('div', containerElementProps)
     const root = ReactDOM.createRoot(rootElement)
     root.render(reactElement)
   </script>
