@@ -1,5 +1,6 @@
 <!-- Using JSX -->
-<!-- http://localhost:3000/isolated/exercise/03.html -->
+<!-- 💯 interpolate className and children -->
+<!-- http://localhost:3000/isolated/exercise/03.extra-1.html -->
 
 <body>
   <div id="root"></div>
@@ -7,9 +8,11 @@
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
   <script type="text/babel">
+    const elementClassName = 'container extra-credit-1'
+    const headingText = 'Hello World'
     const element = (
-      <div class="container">
-        <h1>Hello World</h1>
+      <div class={elementClassName}>
+        <h1>{headingText}</h1>
       </div>
     )
     ReactDOM.createRoot(document.getElementById('root')).render(element)

@@ -1,5 +1,6 @@
 <!-- Using JSX -->
-<!-- http://localhost:3000/isolated/exercise/03.html -->
+<!-- 💯 spread props -->
+<!-- http://localhost:3000/isolated/exercise/03.extra-2.html -->
 
 <body>
   <div id="root"></div>
@@ -7,11 +8,12 @@
   <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
   <script type="text/babel">
-    const element = (
-      <div class="container">
-        <h1>Hello World</h1>
-      </div>
-    )
+    // 👩🏻‍🦱 Had to make sure const names matched prop names exactly,
+    // otherwise I got a browser error related to custom attributes
+    const className = 'container extra-credit-2'
+    const children = <h1>Hello World</h1>
+    const props = {children, className}
+    const element = <div {...props} />
     ReactDOM.createRoot(document.getElementById('root')).render(element)
   </script>
 </body>
