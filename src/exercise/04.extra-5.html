@@ -1,0 +1,30 @@
+<!-- Creating custom components -->
+<!-- 💯 using React Fragments -->
+<!-- http://localhost:3000/isolated/exercise/04.extra-5.html -->
+
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+  <script type="text/babel">
+    const Message = (subject, greeting) => (
+      <div className="message">
+        {greeting}, {subject}
+      </div>
+    )
+    Message.propTypes = {
+      greeting: PropTypes.string.isRequired,
+      subject: PropTypes.string.isRequired,
+    }
+
+    const element = (
+      <>
+        <Message greeting="Hello" subject="World" />
+        <Message greeting="Goodbye" subject="World" />
+      </>
+    )
+    ReactDOM.createRoot(document.getElementById('root')).render(element)
+  </script>
+</body>
