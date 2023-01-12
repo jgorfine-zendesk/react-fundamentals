@@ -6,7 +6,7 @@ import * as React from 'react'
 function UsernameForm({onSubmitUsername}) {
   const handleSubmit = event => {
     event.preventDefault()
-    const value = event.target.username.value
+    const value = event.target.elements.username.value
     onSubmitUsername(value)
   }
 
